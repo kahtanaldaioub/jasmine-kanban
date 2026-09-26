@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f7f2e8" />
+  <title>Jasmine — Kanban Garden</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="petal-field" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <section class="landing" id="landingPage">
+    <div class="landing-orbit orbit-one"></div>
+    <div class="landing-orbit orbit-two"></div>
+    <nav class="landing-nav">
+      <a class="brand" href="#landingPage" aria-label="Jasmine home"><span class="brand-mark">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kanban Yasmin logo">
+  <defs>
+    <linearGradient id="ky-green" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8"  y="12" width="12" height="40" rx="4" fill="url(#ky-green)"/>
+  <rect x="26" y="12" width="12" height="40" rx="4" fill="url(#ky-green)"/>
+  <rect x="44" y="12" width="12" height="40" rx="4" fill="url(#ky-green)" opacity=".45"/>
+
+  <circle cx="32" cy="32" r="7" fill="#FDE68A"/>
+  <path d="M29 32l2 2 4-4" stroke="#065F46" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+        </span><span>Jasmine</span></a>
+      <div class="landing-links">
+        <a href="#vision">Vision</a><a href="#mission">Mission</a><a href="#idea">The idea</a><button
+          class="landing-enter" id="enterWorkspace">
+          Enter workspace
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h13M13 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="landing-hero">
+      <div class="landing-copy">
+        <p class="eyebrow">A calmer way to make progress <span></span></p>
+        <h1>Turn scattered work into something that <em>bloom.</em></h1>
+        <p class="landing-lead">
+          Jasmine is a thoughtful Kanban workspace designed to make progress
+          visible, focused, and human — without turning productivity into
+          pressure.
+        </p>
+        <div class="landing-actions">
+          <button class="landing-primary" id="startJourney">
+            Start your workspace
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h13M13 6l6 6-6 6" />
+            </svg></button><a class="landing-secondary" href="#idea">Discover the idea
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14M6 13l6 6 6-6" />
+            </svg></a>
+        </div>
+        <div class="landing-proof">
+          <span><b>01</b> Capture</span><i></i><span><b>02</b> Cultivate</span><i></i><span><b>03</b> Complete</span>
+        </div>
+      </div>
+      <div class="garden-visual" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="flower flower-a">
+          <span></span><span></span><span></span><span></span><span></span><b></b>
+        </div>
+        <div class="flower flower-b">
+          <span></span><span></span><span></span><span></span><span></span><b></b>
+        </div>
+        <div class="stem stem-a"></div>
+        <div class="stem stem-b"></div>
+        <div class="leaf leaf-a"></div>
+        <div class="leaf leaf-b"></div>
+        <div class="floating-note note-one">
+          <small>today</small><strong>3 tasks bloomed</strong>
+        </div>
+        <div class="floating-note note-two">
+          <small>focus</small><strong>One step at a time</strong>
+        </div>
+      </div>
+    </div>
+    <div class="landing-story">
+      <article id="vision" class="story-card story-main">
+        <span class="story-number">01</span>
+        <p class="eyebrow">Our vision</p>
+        <h2>Make progress feel <em>natural.</em></h2>
+        <p>
+          We imagine a workspace where planning does not compete with doing.
+          Jasmine turns a busy list into a living flow — clear enough to guide
+          you, gentle enough to let you think.
+        </p>
+      </article>
+      <article id="mission" class="story-card">
+        <span class="story-number">02</span>
+        <p class="eyebrow">Our mission</p>
+        <h2>Bring clarity to the <em>next step.</em></h2>
+        <p>
+          Give people one calm place to capture work, see what matters, move
+          tasks forward, and learn from the rhythm of their work.
+        </p>
+        <div class="story-line"></div>
+      </article>
+      <article id="idea" class="story-card">
+        <span class="story-number">03</span>
+        <p class="eyebrow">The idea</p>
+        <h2>A garden for <em>unfinished work.</em></h2>
+        <p>
+          Tasks are seeds. Columns are stages of growth. Progress is not about
+          rushing to the finish — it is about knowing what deserves attention
+          now.
+        </p>
+        <div class="idea-tags">
+          <span>Focus</span><span>Flow</span><span>Reflection</span>
+        </div>
+      </article>
+    </div>
+    <section class="principles">
+      <div>
+        <p class="eyebrow">Designed around people</p>
+        <h2>Quiet interface. <em>Strong system.</em></h2>
+      </div>
+      <div class="principle-grid">
+        <div>
+          <span>01</span>
+          <h3>See the whole garden</h3>
+          <p>
+            Understand work at a glance instead of hunting through scattered
+            tools.
+          </p>
+        </div>
+        <div>
+          <span>02</span>
+          <h3>Protect the flow</h3>
+          <p>
+            WIP limits and deliberate movement keep the board from becoming
+            noise.
+          </p>
+        </div>
+        <div>
+          <span>03</span>
+          <h3>Remember the journey</h3>
+          <p>
+            Activity, timestamps, comments, and statistics turn work into
+            useful reflection.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="landing-footer">
+      <div class="brand">
+        <span class="brand-mark"><svg viewBox="0 0 48 48">
+            <path
+              d="M24 4c3.6 8.5 9.5 12.4 18 13.5-7.1 4.5-10.2 10.7-9.3 19.1-5.9-5.6-12.1-5.6-18 0 .9-8.4-2.2-14.6-9.3-19.1C14.5 16.4 20.4 12.5 24 4Z" />
+            <circle cx="24" cy="23" r="4.5" />
+          </svg></span><span>Jasmine</span>
+      </div>
+      <button id="footerEnter">
+        Open the garden
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12h13M13 6l6 6-6 6" />
+        </svg>
+      </button>
+    </footer>
+  </section>
+  <div class="app-shell" id="appShell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Jasmine home"><span class="brand-mark">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kanban Yasmin logo">
+  <defs>
+    <linearGradient id="ky-green" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8"  y="12" width="12" height="40" rx="4" fill="url(#ky-green)"/>
+  <rect x="26" y="12" width="12" height="40" rx="4" fill="url(#ky-green)"/>
+  <rect x="44" y="12" width="12" height="40" rx="4" fill="url(#ky-green)" opacity=".45"/>
+
+  <circle cx="32" cy="32" r="7" fill="#FDE68A"/>
+  <path d="M29 32l2 2 4-4" stroke="#065F46" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+        </span><span>Jasmine</span></a>
+      <div class="top-actions">
+        <label class="search"><svg viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="6.5" />
+            <path d="m16 16 5 5" />
+          </svg><input id="searchInput" placeholder="Search tasks…" aria-label="Search tasks" /><kbd>F</kbd></label>
+        <button class="icon-btn" id="activityBtn" title="Activity log">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 5h16M4 12h16M4 19h10" />
+            <circle cx="18" cy="19" r="2" />
+          </svg>
+        </button>
+        <button class="icon-btn" id="statsBtn" title="Statistics">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 19V9M12 19V5M19 19v-7" />
+          </svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" title="Toggle theme">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 15.2A8 8 0 1 1 8.8 4 6.3 6.3 0 0 0 20 15.2Z" />
+          </svg>
+        </button>
+        <button class="primary-btn" id="newTaskBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          New task
+        </button>
+        <button class="icon-btn" id="moreBtn" title="More">
+          <svg viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="1.5" />
+            <circle cx="12" cy="12" r="1.5" />
+            <circle cx="19" cy="12" r="1.5" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Let good work <em>bloom.</em></h1>
+          <p class="hero-copy">
+            A calm command center for turning small tasks into meaningful
+            progress.
+          </p>
+        </div>
+        <div class="hero-meta">
+          <div class="date-chip" id="todayChip"></div>
+          <div class="mini-progress">
+            <span>Weekly rhythm</span>
+            <div><i id="weeklyProgress"></i></div>
+            <strong id="weeklyText">0%</strong>
+          </div>
+        </div>
+      </section>
+      <section class="toolbar">
+        <div class="filter-group">
+          <select id="priorityFilter">
+            <option value="all">All priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select><select id="labelFilter">
+            <option value="all">All labels</option>
+            <option value="design">Design</option>
+            <option value="development">Development</option>
+            <option value="testing">Testing</option>
+            <option value="documentation">Documentation</option>
+          </select><select id="assigneeFilter">
+            <option value="all">All people</option>
+          </select><select id="statusFilter">
+            <option value="all">All status</option>
+            <option value="active">Active</option>
+            <option value="overdue">Overdue</option>
+            <option value="completed">Completed</option>
+          </select><select id="sortSelect">
+            <option value="created-desc">Newest</option>
+            <option value="created-asc">Oldest</option>
+            <option value="priority-desc">Priority high → low</option>
+            <option value="priority-asc">Priority low → high</option>
+            <option value="deadline-asc">Deadline soonest</option>
+            <option value="alpha-asc">A → Z</option>
+            <option value="alpha-desc">Z → A</option>
+          </select><button class="text-btn" id="clearFilters">Clear filters</button>
+        </div>
+        <div class="toolbar-right">
+          <button class="ghost-btn" id="exportBtn">Export</button><button class="ghost-btn"
+            id="importBtn">Import</button><input id="importFile" type="file" accept="application/json" hidden />
+        </div>
+      </section>
+      <section class="board" id="board"></section>
+    </main>
+    <div class="drawer" id="activityDrawer">
+      <div class="drawer-head">
+        <div>
+          <p class="eyebrow">Board memory</p>
+          <h2>Activity log</h2>
+        </div>
+        <button class="icon-btn close-drawer" aria-label="Close">×</button>
+      </div>
+      <div class="activity-filters">
+        <button class="active" data-log="all">All</button><button data-log="created">Created</button><button
+          data-log="moved">Moved</button><button data-log="edited">Edited</button><button
+          data-log="deleted">Deleted</button>
+      </div>
+      <div id="activityList" class="activity-list"></div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="taskModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">Task detail</p>
+          <h2 id="modalTitle">New task</h2>
+        </div>
+        <button class="icon-btn modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
+      <form id="taskForm">
+        <input id="taskId" type="hidden" />
+        <div class="form-grid">
+          <label class="wide">Title<input id="taskTitle" maxlength="100" required
+              placeholder="What needs to bloom?" /><small id="titleCount">0 / 100</small></label><label
+            class="wide">Description<textarea id="taskDescription" rows="3"
+              placeholder="Add a little context…"></textarea></label><label>Priority<select id="taskPriority">
+              <option value="high">High</option>
+              <option value="medium" selected>Medium</option>
+              <option value="low">Low</option>
+            </select></label><label>Label<select id="taskLabel">
+              <option value="">None</option>
+              <option value="design">Design</option>
+              <option value="development">Development</option>
+              <option value="testing">Testing</option>
+              <option value="documentation">Documentation</option>
+            </select></label><label>Assignee<input id="taskAssignee"
+              placeholder="Person" /></label><label>Deadline<input id="taskDeadline"
+              type="date" /></label><label>Estimated hours<input id="taskHours" type="number" min="0" step="0.5"
+              placeholder="3" /></label><label>Status<select id="taskColumn">
+              <option value="todo">To Do</option>
+              <option value="progress">In Progress</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select></label>
+        </div>
+        <div class="modal-section">
+          <div class="section-title">
+            <span>Subtasks</span><button type="button" class="small-btn" id="addSubtask">
+              Add
+            </button>
+          </div>
+          <div id="subtasks"></div>
+        </div>
+        <div class="modal-section">
+          <div class="section-title">
+            <span>Comments</span><span class="muted" id="commentCount">0</span>
+          </div>
+          <div id="comments"></div>
+          <div class="comment-compose">
+            <input id="commentAuthor" placeholder="Your name" /><input id="commentText"
+              placeholder="Leave a note…" /><button type="button" class="small-btn" id="addComment">
+              Post
+            </button>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="ghost-btn modal-cancel">Cancel</button><button class="primary-btn"
+            type="submit">Save task</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal small-modal" id="confirmModal">
+      <div class="confirm-mark">
+        <svg viewBox="0 0 48 48">
+          <path d="M24 7 42 39H6L24 7Z" />
+          <path d="M24 18v10M24 33v1" />
+        </svg>
+      </div>
+      <h2>Let this task rest?</h2>
+      <p>
+        It will be removed from your board. You’ll have 10 seconds to undo it.
+      </p>
+      <div class="modal-actions">
+        <button class="ghost-btn" id="confirmCancel">Keep it</button><button class="danger-btn"
+          id="confirmDelete">Delete task</button>
+      </div>
+    </div>
+    <div class="modal stats-modal" id="statsModal">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">A little perspective</p>
+          <h2>Board garden</h2>
+        </div>
+        <button class="icon-btn stats-close" aria-label="Close">
+          <svg viewBox="0 0 24 24">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
+      <div id="statsContent"></div>
+    </div>
+    <div class="toast" id="toast">
+      <span class="toast-dot"></span><span id="toastText"></span><button id="toastAction" hidden>Undo</button>
+    </div>
+  </div>
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
